@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ukinterface>
+<!--
+   TestUI.uki
+   UKInterface
+
+   Created by Uli Kusterer on 28.09.08.
+   Copyright 2008 The Void Software. All rights reserved.
+-->
+<ukinterface version="1.0">
+	
+	<panel title="The Window" id="theWindow" resizable="yes" visible="yes" hidesondeactivate="no" outlet="theWindow">
+		<!--<view class="UKViewListView" id="newContentView">
+			<connection from="theWindow.contentView" to="newContentView" />
+		    </view> -->
+		
+		<view class="UKWidthEqualizingContainer" sizing="rb">
+			<button title="Cancel" shortcut="esc" sizing="lb" />
+			<button title="OK" shortcut="return" sizing="lb" />
+		</view>
+		
+		<view class="UKAvailableSpaceFillingContainerView" sizing="hw">
+			<popup title="Push Me!" target="buttonDelegate" action="pushMe:" sizing="bl">
+				
+				<menu title="File" outlet="theMenu">
+					<item title="Quit" shortcut="q" action="terminate:" />
+					<item title="Open Recent">
+						<menu title="Open Recent Submenu">
+							<item title="Old File" />
+						</menu>
+					</item>
+					<separator />
+					<item title="Open" shortcut="o" action="open:" />
+					<item title="Test" />
+					<item attributedtitle="This &lt;i&gt;Sucks&lt;/i&gt;" />
+				</menu>
+				
+			</popup>
+			<!--<scrollview id="outerTxView" sizing="hw" border="bezel" scroller="hv">
+				<textview id="innerTxView">
+					<connection from="outerTxView.documentView" to="innerTxView" />
+					<attributedtext>
+						This is my text field, right?
+					</attributedtext>
+				</textview>
+			</scrollview>-->
+		</view>
+	</panel>
+	
+	<object class="UKTestClass" id="buttonDelegate" outlet="buttonDelegate" />
+</ukinterface>
