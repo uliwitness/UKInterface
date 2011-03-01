@@ -23,6 +23,11 @@ NSRect		UKRectFromString( NSString* str )
 }
 
 
+@interface UKInterface () <NSXMLParserDelegate>
+
+@end
+
+
 @implementation UKInterface
 
 +(id)	interfaceNamed: (NSString*)filename
